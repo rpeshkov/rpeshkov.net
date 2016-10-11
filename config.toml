@@ -1,3 +1,36 @@
 baseurl = "https://rpeshkov.net/"
+author = "Roman Peshkov"
 title = "Roman Peshkov"
 languageCode = "en-us"
+theme = "mixed"
+newContentEditor = "code"
+
+googleAnalytics = "UA-54555343-2"
+
+[params.social]
+github = "rpeshkov"
+linkedin = "rpeshkov"
+twitter = "rpeshkov"
+vk = "rpeshkov"
+email = "peshkovroman@gmail.com"
+
+[[menu.main]]
+    name = "Blog"
+    weight = 100
+    identifier = "blog"
+    url = "/blog/"
+[[menu.main]]
+    name = "Portfolio"
+    identifier = "portfolio"
+    weight = 200
+    url = "/portfolio/"
+[[menu.main]]
+    name = "CV"
+    identifier = "cv"
+    weight = 300
+    url = "/cv-rpeshkov.docx"
+[[menu.main]]
+    name = "Contacts"
+    identifier = "contacts"
+    weight = 400
+    url = "/contacts/"
