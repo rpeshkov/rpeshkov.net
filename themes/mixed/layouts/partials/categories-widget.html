@@ -1,0 +1,10 @@
+<div class="widget">
+    <h5 class="widget__head">Categories</h5>
+    <div class="widget__body">
+        <ul>
+            {{ range $key, $value := .Site.Taxonomies.categories }}
+            <li><a href="{{ "/categories/" | relLangURL}}{{ $key | urlize }}">{{ $key }}</a></li>
+            {{ end }}
+        </ul>
+    </div>
+</div>

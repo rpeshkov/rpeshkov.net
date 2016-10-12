@@ -1,97 +1,22 @@
-<!doctype html>
-<html class="no-js" lang="{{ .Site.LanguageCode }}">
+{{ partial "head.html" . }}
 
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="Roman Peshkov personal website">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{{ .Title }} &middot; {{ .Site.Title }}</title>
+{{ partial "header.html" . }}
 
-    {{ .Hugo.Generator }}
-
-    {{ if .RSSlink }}
-        <link href="{{ . }}" rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" />
-        <link href="{{ . }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
-    {{ end }}
-
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <link rel="shortcut icon" href="/favicon.ico">
-
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Slab&subset=cyrillic" rel="stylesheet">
-    <link rel="stylesheet" href="{{ "css/main.css" | absURL }}">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-    <script src="https://use.fontawesome.com/f41d4fa1d2.js"></script>
-</head>
-
-<body lang="{{ .Site.LanguageCode }}">
-    {{ partial "header.html" .}}
-
-    <main>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-9">
-                    <section class="post-content-wrapper">
-                        <article class="post-content clearfix">
-                            {{ .Content }}
-                        </article>
-                    </section>
-                </div>
-
-                <div class="col-md-3">
-                    <aside class="sidebar-wrapper" role="complemantary">
-                        <div class="widget">
-                            <h5 class="widget__head">Recent posts</h5>
-                            <div class="widget__body">
-                                <ul>
-                                    <li><a href="https://rpeshkov.net/oshibka-avtorizatsii-docker/">Docker authorization error</a></li>
-                                    <li><a href="https://rpeshkov.net/hg-locale-on-english-windows/">Cyrillic commits in TortoiseHg on english Windows</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="widget">
-                            <h5 class="widget__head">Archives</h5>
-                            <div class="widget__body">
-                                <ul>
-                                    <li><a href='https://rpeshkov.net/2016/01/'>January 2016</a></li>
-                                    <li><a href='https://rpeshkov.net/2015/10/'>October 2015</a></li>
-                                </ul>
-                            </div>
-
-                        </div>
-                        <div class="widget">
-                            <h5 class="widget__head">Categories</h5>
-                            <div class="widget__body">
-                                <ul>
-                                    <li><a href="https://rpeshkov.net/category/bez-rubriki/">No category</a></li>
-                                </ul>
-                            </div>
-
-                        </div>
-                        <div class="widget">
-                            <h5 class="widget__head">Tags</h5>
-                            <div class="widget__body">
-                                <div class="tagcloud">
-                                    <a href='https://rpeshkov.net/tag/docker/' title='1 запись' style='font-size: 8pt;'>docker</a>
-                                    <a href='https://rpeshkov.net/tag/hg/' title='1 запись' style='font-size: 8pt;'>hg</a>
-                                    <a href='https://rpeshkov.net/tag/mercurial/' title='1 запись' style='font-size: 8pt;'>mercurial</a>
-                                </div>
-                            </div>
-
-                        </div>
-                    </aside>
-                </div>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <section class="post-content-wrapper">
+                    <article class="post-content clearfix">
+                        {{ .Content }}
+                    </article>
+                </section>
             </div>
+
+            {{ partial "sidebar.html" . }}
         </div>
-    </main>
+    </div>
+</main>
 
-    {{ partial "footer.html" .}}
+{{ partial "footer.html" .}}
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-    {{ template "_internal/google_analytics_async.html" . }}
-</body>
-
-</html>

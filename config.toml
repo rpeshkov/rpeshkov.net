@@ -7,6 +7,9 @@ newContentEditor = "code"
 
 googleAnalytics = "UA-54555343-2"
 
+[params]
+dateFormat = "Jan 2, 2006"
+
 [params.social]
 github = "rpeshkov"
 linkedin = "rpeshkov"
@@ -18,7 +21,7 @@ email = "peshkovroman@gmail.com"
     name = "Blog"
     weight = 100
     identifier = "blog"
-    url = "/blog/"
+    url = "/post/"
 [[menu.main]]
     name = "Portfolio"
     identifier = "portfolio"
