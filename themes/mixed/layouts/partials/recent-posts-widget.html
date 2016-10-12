@@ -2,8 +2,9 @@
     <h5 class="widget__head">Recent posts</h5>
     <div class="widget__body">
         <ul>
-            <li><a href="https://rpeshkov.net/oshibka-avtorizatsii-docker/">Docker authorization error</a></li>
-            <li><a href="https://rpeshkov.net/hg-locale-on-english-windows/">Cyrillic commits in TortoiseHg on english Windows</a></li>
+            {{ range first 5 (where .Site.Pages "Section" "post") }}
+                <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+            {{ end }}
         </ul>
     </div>
 </div>
