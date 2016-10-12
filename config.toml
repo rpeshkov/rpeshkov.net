@@ -8,6 +8,9 @@ newContentEditor = "code"
 googleAnalytics = "UA-54555343-2"
 disqusShortname = "rpeshkov-net"
 
+[permalinks]
+post = "/:year/:month/:title/"
+
 [params]
 dateFormat = "Jan 2, 2006"
 
