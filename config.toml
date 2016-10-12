@@ -6,6 +6,7 @@ theme = "mixed"
 newContentEditor = "code"
 
 googleAnalytics = "UA-54555343-2"
+disqusShortname = "rpeshkov-net"
 
 [params]
 dateFormat = "Jan 2, 2006"
