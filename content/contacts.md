@@ -1,9 +1,8 @@
-+++
-date = "2016-10-12T14:51:21+03:00"
-title = "Contact Me"
-categories = []
-
-+++
+---
+date: "2016-10-12T14:51:21+03:00"
+title: "Contact Me"
+categories: []
+---
 
 In case you have any questions to me, don't hesitate writing the message.
 

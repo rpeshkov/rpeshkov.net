@@ -9,7 +9,7 @@ googleAnalytics = "UA-54555343-2"
 disqusShortname = "rpeshkov-net"
 
 [permalinks]
-post = "/:year/:month/:title/"
+blog = "/blog/:title/"
 
 [params]
 dateFormat = "Jan 2, 2006"
@@ -25,7 +25,7 @@ email = "peshkovroman@gmail.com"
     name = "Blog"
     weight = 100
     identifier = "blog"
-    url = "/post/"
+    url = "/blog/"
 [[menu.main]]
     name = "Portfolio"
     identifier = "portfolio"

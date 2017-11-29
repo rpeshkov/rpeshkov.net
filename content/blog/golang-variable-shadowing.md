@@ -2,6 +2,7 @@
 title: "Golang Variable Shadowing"
 date: 2017-06-28T23:18:08+02:00
 categories: ["Go"]
+type: "post"
 ---
 
 Recently I've been playing with some code in Go. Code was quite simple, but what I wanted is to simplify error handling a little bit and make code more readable.
