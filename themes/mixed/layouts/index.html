@@ -9,18 +9,11 @@
                 <div class="col-md-9">
                     <section class="post-content-wrapper">
                         <article class="post-content clearfix">
-                            <p>
-                                <a href="/avatar.jpg">
-                                    <img class="alignleft" src="/avatar.jpg" width="215" height="224" alt="Roman Peshkov" />
-                                </a>
-                            </p>
-
-                            <p>Hello, my name is Roman.</p>
-                            <p>I'm .NET developer with over 5 years of experience. IT engineer since 2008.</p>
-                            <p>Previously have been working a lot on ISS and CCTV development. Currently developing business automation systems on Kofax Capture and OpenText platforms.</p>
-                            <p>Participated in projects of creating shared services center for Norilsk Nikel and Megafon companies.</p>
-                            <p>Certified Kofax Capture and Kofax Transformation Modules specialist.</p>
-                            <p>Really enjoy web technologies and everything that is connected with web. In my spare time do websites and web portals using WordPress CMS.</p>
+                            {{ with .Site.Params.gravatar }}
+                                <img class="alignleft" src="https://www.gravatar.com/avatar/{{ . | md5 }}?s=215&amp;d=identicon" width="215" height="224" alt="Roman Peshkov" />
+                            {{ end }}
+                            
+                            {{ .Content }}
                         </article>
                     </section>
                 </div>

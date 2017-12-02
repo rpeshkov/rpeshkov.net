@@ -13,6 +13,7 @@ blog = "/blog/:title/"
 
 [params]
 dateFormat = "Jan 2, 2006"
+gravatar = "peshkovroman@gmail.com"
 
 [params.social]
 github = "rpeshkov"
