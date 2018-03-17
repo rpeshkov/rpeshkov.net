@@ -3,13 +3,12 @@ author = "Roman Peshkov"
 title = "Roman Peshkov"
 languageCode = "en-us"
 theme = "mixed"
-newContentEditor = "code"
 
 googleAnalytics = "UA-54555343-2"
 disqusShortname = "rpeshkov-net"
 
 [permalinks]
-blog = "/blog/:title/"
+blog = "/blog/:slug/"
 
 [params]
 dateFormat = "Jan 2, 2006"
