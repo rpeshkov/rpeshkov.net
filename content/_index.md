@@ -1,6 +1,7 @@
 ---
-date: "2016-10-12T15:29:52+03:00"
-title: "About"
+title: ""
+date: 2018-04-05T23:31:35+02:00
+draft: false
 ---
 
 Hello, my name is Roman.

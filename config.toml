@@ -1,18 +1,13 @@
-baseurl = "https://rpeshkov.net/"
-author = "Roman Peshkov"
-title = "Roman Peshkov"
+baseURL = "/"
 languageCode = "en-us"
-theme = "mixed"
-
-googleAnalytics = "UA-54555343-2"
-disqusShortname = "rpeshkov-net"
-
-[permalinks]
-blog = "/blog/:slug/"
+title = "Roman Peshkov"
+theme = "rp"
 
 [params]
-dateFormat = "Jan 2, 2006"
-gravatar = "peshkovroman@gmail.com"
+recentCount = 3
+avatar = "/avatar.jpg"
+description = "developer, geek, workaholic"
+copyright = "Copyright &copy; 2018 Roman Peshkov"
 
 [params.social]
 github = "rpeshkov"
@@ -21,23 +16,23 @@ twitter = "rpeshkov"
 vk = "rpeshkov"
 email = "peshkovroman@gmail.com"
 
-[[menu.main]]
-    name = "Blog"
-    weight = 100
-    identifier = "blog"
-    url = "/blog/"
-[[menu.main]]
-    name = "Portfolio"
-    identifier = "portfolio"
-    weight = 200
-    url = "/portfolio/"
-[[menu.main]]
-    name = "CV"
-    identifier = "cv"
-    weight = 300
-    url = "/cv-rpeshkov.docx"
-[[menu.main]]
-    name = "Contacts"
-    identifier = "contacts"
-    weight = 400
-    url = "/contacts/"
+[related]
+threshold = 80 # Only include matches with rank >= threshold. This is a normalized rank between 0 and 100.
+includeNewer = true # To get stable "See also" sections we, by default, exclude newer related pages.
+toLower = false # Will lower case keywords in both queries and in the indexes.
+
+[[related.indices]]
+name  = "tags"
+weight = 100
+
+[menu]
+    [[menu.main]]
+        name = "Blog"
+        weight = 100
+        identifier = "blog"
+        url = "/blog/"
+    [[menu.main]]
+        name = "Links"
+        identifier = "links"
+        weight = 200
+        url = "/links/"
