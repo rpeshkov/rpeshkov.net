@@ -1,0 +1,3 @@
+[submodule "themes/rp"]
+	path = themes/rp
+	url = https://github.com/rpeshkov/rp.git
