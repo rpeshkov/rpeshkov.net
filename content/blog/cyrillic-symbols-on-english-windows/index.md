@@ -1,7 +1,7 @@
 ---
 date: "2016-10-16T22:42:54+03:00"
 title: "Cyrillic symbols on english Windows 10"
-categories: ["Tips"]
+tags: ["windows"]
 ---
 
 I use english version of Windows 10 but sometimes I have to deal with files that have cyrillic names or with cyrillic
