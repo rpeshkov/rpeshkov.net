@@ -59,7 +59,7 @@ So, if you use short assignment (`:=`) to declare variable with the same name in
 
 Really good sample of this behavior you can find in [50 Shades of Go](http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/):
 
-{{< highlight go "linenos=table" >}}
+{{< highlight go "" >}}
 func main() {
     x := 1
     fmt.Println(x)     //prints 1
