@@ -2,6 +2,7 @@ baseURL = "/"
 languageCode = "en-us"
 title = "Roman Peshkov"
 theme = "rp"
+pluralizelisttitles = false
 
 [params]
 recentCount = 3
