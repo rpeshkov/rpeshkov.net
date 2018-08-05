@@ -1,7 +1,7 @@
 +++
 title = "VSCode extension dependency injection"
 date = 2018-08-02T20:00:05+02:00
-draft = true
+draft = false
 tags = ["vscode"]
 +++
 
@@ -291,10 +291,11 @@ You can try to launch extension once again and you'll notice that everything wor
 
 ## Conclusion
 
-Need to write it.
+Hopefully, you now have a better understanding of how to integrate DI framework into your extension codebase and start using it. During this article we've just scratched the surface of what Inversify can do. If you want to know more about Inversify's features, refer to the [documentation][inversify-docs]. If you have any questions about this article or something isn't working after you followed all steps, you can drop me a message in Twitter or view the source code of final extension in GitHub.
 
 [inversifyjs]: http://inversify.io/
 [reflect-metadata]: https://www.npmjs.com/package/reflect-metadata
 [vscode]: ./1-vscode.png
 [extension-debug]: ./2-extension-debug.png
 [debug-console]: ./3-debug-console-output.png
+[inversify-docs]: https://github.com/inversify/InversifyJS/tree/master/wiki
