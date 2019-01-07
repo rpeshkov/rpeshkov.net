@@ -3,6 +3,9 @@ languageCode = "en-us"
 title = "Roman Peshkov"
 theme = "rp"
 pluralizelisttitles = false
+# pygmentsUseClassic=true
+pygmentsStyle="monokai"
+pygmentsCodeFences = true
 
 [params]
 recentCount = 3

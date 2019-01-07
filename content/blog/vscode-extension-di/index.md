@@ -1,9 +1,9 @@
-+++
-title = "VSCode extension dependency injection"
-date = 2018-08-02T20:00:05+02:00
-draft = false
-tags = ["vscode"]
-+++
+---
+title: "VSCode extension dependency injection"
+date: 2018-08-02T20:00:05+02:00
+draft: false
+tags: ["vscode"]
+---
 
 In this post I'll show how to use dependency injection in your extension via InversifyJS library. Here's about from [official site][inversifyjs]:
 
@@ -17,22 +17,22 @@ First we need to create our extension. You can read about extension creation in 
 
 After you have extension created it's required to install InversifyJS itself and also additional package called [reflect-metadata][reflect-metadata]. Do it via this console command:
 
-{{< highlight sh >}}
+```sh
 npm install inversify reflect-metadata --save
-{{< / highlight >}}
+```
 
 Here what I got:
 
-{{< highlight sh >}}
+```sh
 + reflect-metadata@0.1.12
 + inversify@4.13.0
-{{< / highlight >}}
+```
 
 One note here: packages installed as dependencies and not devDependencies. That's very important thing. If you install those packages as dev dependencies, it will still work fine while you're developing, but it will crash if your extension will be installed from marketplace.
 
 Next step that's required is to enable some compilation options in your `tsconfig.json` file. `experimentalDecorators` and `emitDecoratorMetadata` options must be enabled. Open `tsconfig.json` file and add there required changes. Here how my `tsconfig.json` file looks like after changes:
 
-{{< highlight json "" >}}
+```json
 {
     "compilerOptions": {
         "module": "commonjs",
@@ -51,26 +51,26 @@ Next step that's required is to enable some compilation options in your `tsconfi
         ".vscode-test"
     ]
 }
-{{< / highlight >}}
+```
 
 That's it with initialization, now let's proceed with coding.
 
 Let's start with defining our interfaces. For this tutorial we'll do very basic stuff just to show how DI works in Inversify.
 
-{{< highlight typescript "" >}}
+```typescript
 export interface Command {
     id: string;
     execute(...args: any[]): any;
 }
-{{< / highlight >}}
+```
 
 This `Command` interface will be used for describing commands that we will register in VSCode.
 
-{{< highlight typescript "" >}}
+```typescript
 export interface Printer {
     print(message: string): void;
 }
-{{< / highlight >}}
+```
 
 This `Printer` interface defines abstract point of message output. Later we will inject this `Printer` into our commands.
 
@@ -78,18 +78,18 @@ For this article I put `Command` interface into `commands` folder and `Printer` 
 
 Also, for correct injection we need symbols. Symbol defines an identifier that will be used later for registering and resolving dependencies. I placed symbols definition in the root of `src` folder and this file contains this:
 
-{{< highlight typescript "" >}}
+```typescript
 const TYPES = {
     Command: Symbol("Command"),
     Printer: Symbol("Printer")
 };
 
 export default TYPES;
-{{< / highlight >}}
+```
 
 After all those changes, your `src` folder should look this way:
 
-```
+```sh
 .
 ├── commands
 │   ├── command.ts
@@ -108,7 +108,7 @@ We'll have 2 commands and 1 printer. Commands will be `AddCommand` and `RemoveCo
 
 Create new file `add-command.ts` inside `commands` folder with the following content:
 
-{{< highlight typescript "" >}}
+```typescript
 import { injectable, inject } from 'inversify';
 
 import TYPES from '../types';
@@ -130,7 +130,7 @@ export class AddCommand implements Command {
         this.printer.print('AddCommand');
     }
 }
-{{< / highlight >}}
+```
 
 There are two main things to notice here:
 
@@ -143,7 +143,7 @@ There are two main things to notice here:
 
 Second command that we'll implement looks very similar to `AddCommand` and it's called `RemoveCommand`. Create new file `remove-command.ts` inside `commands` folder with the following contents:
 
-{{< highlight typescript "" >}}
+```typescript
 import { injectable, inject } from 'inversify';
 
 import TYPES from '../types';
@@ -165,13 +165,13 @@ export class RemoveCommand implements Command {
         this.printer.print('RemoveCommand');
     }
 }
-{{< / highlight >}}
+```
 
 Difference between 2 commands are basically name of the class, id of command and what this command prints via `Printer`.
 
 Now, let's implement our printer. Create new file `console-printer.ts` inside `utils` folder with the following content:
 
-{{< highlight typescript "" >}}
+```typescript
 import { injectable } from 'inversify';
 import { Printer } from './printer';
 
@@ -181,13 +181,13 @@ export class ConsolePrinter implements Printer {
         console.log(message);
     }
 }
-{{< / highlight >}}
+```
 
 As you may already noticed, it's implementation is very simple.
 
 Before we will start setting up our container, let's create one more thing that will help up with commands registering in VSCode. I called it `CommandsManager` and placed near all the commands we defined - inside `commands` folder. Here how it looks like:
 
-{{< highlight typescript "" >}}
+```typescript
 import * as vscode from 'vscode';
 import { multiInject, injectable } from 'inversify';
 import TYPES from '../types';
@@ -206,7 +206,7 @@ export class CommandsManager {
         }
     }
 }
-{{< / highlight >}}
+```
 
 While this class is quite small, there is one thing that differs from our command implementations. You should notice `@multiInject` decorator at the constructor parameter and parameter type is array. `@multiInject` decorator tells DI container to inject all the entities with specified symbol (`TYPES.Command` in our case). That basically means that all the implementations of `Command` interface will be passed here as an array.
 
@@ -214,7 +214,7 @@ Phew, that's it with implementations, now let's finally configure our DI contain
 
 If you look through official documentation for Inversify, you'll see that it recommends putting container into `inversify.config.ts` file. Let's stick with this recommendation and create the same file in `src` folder.
 
-{{< highlight typescript "" >}}
+```typescript
 import 'reflect-metadata';
 
 import { Container } from 'inversify';
@@ -233,7 +233,7 @@ container.bind<Command>(TYPES.Command).to(RemoveCommand);
 container.bind<CommandsManager>(TYPES.CommandManager).to(CommandsManager);
 
 export default container;
-{{< / highlight >}}
+```
 
 If you previously worked with any DI container, this will look very familiar to you. Still, one important thing here is the first line. Without it, nothing would work, because this library should be imported globally once.
 
@@ -241,14 +241,14 @@ So, now we have our entities, symbols and set up our container. Let's finally do
 
 Open file `extension.ts` and inside `activate` method write the following:
 
-{{< highlight typescript "" >}}
+```typescript
 const cmdManager = container.get<CommandsManager>(TYPES.CommandManager);
 cmdManager.registerCommands(context);
-{{< / highlight >}}
+```
 
 Also, don't forget to tell in `package.json` file that your extension contributes commands. Here how mine `contributes` section looks like:
 
-{{< highlight json "" >}}
+```json
 "contributes": {
     "commands": [
         {
@@ -261,15 +261,15 @@ Also, don't forget to tell in `package.json` file that your extension contribute
         }
     ]
 }
-{{< / highlight >}}
+```
 
 That's basically it. You can now launch your extension and try to invoke command from command palette.
 
 I tried to launch `add` command and it failed... :(
 
-{{< highlight typescript "" >}}
+```sh
 Running the contributed command:'extension.add' failed.
-{{< / highlight >}}
+```
 
 You might be wondering "why did that happen???". Well, if you will try to launch your extension under debug and stop at breakpoint inside any command's execute method, you'll notice that `this` is undefined.
 
@@ -279,7 +279,7 @@ Explanation for this is quite simple: `this` context is not set to your object w
 
 Change this line into this:
 
-```
+```typescript
 const cmd = vscode.commands.registerCommand(c.id, c.execute, c);
 ```
 
