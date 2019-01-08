@@ -9,7 +9,7 @@ Recently I've been playing with some code in Go. Code was quite simple, but what
 
 As many Go developers know, error handling in Go is usually done this way:
 
-{{< highlight go "" >}}
+```go
 func templateToFile(templateFilename string, filename string, data interface{}) error {
 
 	f, err := os.OpenFile(filename, os.O_WRONLY|os.O_TRUNC|os.O_CREATE, 0666)
@@ -25,11 +25,11 @@ func templateToFile(templateFilename string, filename string, data interface{}) 
 
 	return t.Execute(f, data)
 }
-{{< / highlight >}}
+```
 
 I've used to it too, but I was wondering whether this can be simplified. So I decided to use named return values and reorganize my code to something like this
 
-{{< highlight go "" >}}
+```go
 func templateToFile(templateFilename string, filename string, data interface{}) (err error) {
 
 	if f, err := os.OpenFile(filename, os.O_WRONLY|os.O_TRUNC|os.O_CREATE, 0666); err == nil {
@@ -41,7 +41,7 @@ func templateToFile(templateFilename string, filename string, data interface{}) 
 	}
 	return
 }
-{{< / highlight >}}
+```
 
 As you can see, here I have named return variable `err` and in each operation we put something there so that if `os.OpenFile` fails, you'll get `err != nil` and it will be returned. Theoretically this looks nice, but it doesn't work because of variable shadowing. In this particular example `err` in return value, `err` in first if block and `err` in second if block are different variables!
 
@@ -59,7 +59,7 @@ So, if you use short assignment (`:=`) to declare variable with the same name in
 
 Really good sample of this behavior you can find in [50 Shades of Go](http://devs.cloudimmunity.com/gotchas-and-common-mistakes-in-go-golang/):
 
-{{< highlight go "" >}}
+```go
 func main() {
     x := 1
     fmt.Println(x)     //prints 1
@@ -70,23 +70,23 @@ func main() {
     }
     fmt.Println(x)     //prints 1 (bad if you need 2)
 }
-{{< / highlight >}}
+```
 
 ## Detect shadowing
 
 Variable shadowing can be detected by `vet` command from Go. Call it this way:
 
-{{< highlight bash "" >}}
+```bash
 go tool vet --shadow file.go
-{{< / highlight >}}
+```
 
 When you run this command, you'll see shadowing issues in the file you've provided.
 
 Example:
 
-{{< highlight bash "" >}}
+```bash
 main.go:14: declaration of "err" shadows declaration at main.go:13
-{{< / highlight >}}
+```
 
 ## Conclusion
 

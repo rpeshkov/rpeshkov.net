@@ -1,9 +1,9 @@
-+++
-title = "VSCode extension code coverage"
-date = 2018-05-06T22:38:35+02:00
-draft = false
-tags = ["vscode"]
-+++
+---
+title: "VSCode extension code coverage"
+date: 2018-05-06T22:38:35+02:00
+draft: false
+tags: ["vscode"]
+---
 
 In this article I'll show you how to add code coverage info for you Visual Studio Code extension code. We'll start from the very beginning and in the end you'll have working extension with code coverage metrics setup.
 
@@ -17,10 +17,10 @@ Open your terminal and type `yo code` in it. You can leave all the values to the
 
 After last question about initializing git repository, generator will install scaffold extension code and install all the required npm packages. Now you can navigate into the extension's folder and open it in VSCode:
 
-{{< highlight sh >}}
+```bash
 cd vscode-testcov
 code .
-{{< / highlight >}}
+```
 
 [![VSCode with opened extension][vscode-ext]][vscode-ext]
 
@@ -36,19 +36,19 @@ For measuring the code coverage we'll be using [Istanbul](https://github.com/got
 
 First we need to add Instabul and other utility packages to our project. Open terminal window, navigate to your project and execute following command:
 
-{{< highlight zsh >}}
+```bash
 npm install istanbul remap-istanbul glob @types/glob decache --save
-{{< / highlight >}}
+```
 
 Here is the output with packages and their versions that were installed:
 
-{{< highlight shell >}}
+```bash
 + remap-istanbul@0.11.1
 + istanbul@0.4.5
 + decache@4.4.0
 + glob@7.1.2
 + @types/glob@5.0.35
-{{< / highlight >}}
+```
 
 ## Reimplementing test runner
 
@@ -56,7 +56,7 @@ For launching tests of VSCode extension, VSCode itself provides test runner that
 
 Now, open `index.ts` file in `src/test` folder of extension. You should see there:
 
-{{< highlight typescript "" >}}
+```typescript
 import * as testRunner from 'vscode/lib/testrunner';
 
 // You can directly control Mocha options by uncommenting the following lines
@@ -67,13 +67,13 @@ testRunner.configure({
 });
 
 module.exports = testRunner;
-{{< / highlight >}}
+```
 
 This is default configuration that basically just sets settings to TDD style and enables colored output.
 
 Replace contents of this file with the following:
 
-{{< highlight typescript "" >}}
+```typescript
 'use strict';
 
 declare var global: any;
@@ -292,13 +292,13 @@ class CoverageRunner {
         });
     }
 }
-{{< / highlight >}}
+```
 
 Originally this code is taken from [here](https://github.com/codecov/example-typescript-vscode-extension/blob/master/test/index.ts), but I've made some changes to be compatible with strict mode.
 
 Also, you need to provide configuration for the Istanbul. Create file `coverconfig.json` in the root of your project with the following content:
 
-{{< highlight json "" >}}
+```json
 {
     "enabled": true,
     "relativeSourcePath": "../src",
@@ -314,19 +314,19 @@ Also, you need to provide configuration for the Istanbul. Create file `coverconf
     ],
     "verbose": false
 }
-{{< / highlight >}}
+```
 
 Now, you're ready to go. Try to launch tests once again and see the results. If you were following the instructions, you should see the message `No coverage information was collected, exit without writing coverage information` after your tests execution output. What?! Why?! Well, no coverage information was collected because default test doesn't execute any functions from the extension. You can read this message more like `There was nothing to collect`.
 
 Change your `extension.test.ts` file to execute at least something that's related with your extension. Change the body of `Something 1` test to this:
 
-{{< highlight typescript "" >}}
+```typescript
 vscode.commands.executeCommand("extension.sayHello");
-{{< / highlight >}}
+```
 
 and fix your imports so code would be compilable and then run your tests once again. After all that fixes you would see the report:
 
-```
+```bash
 =============================== Coverage summary ===============================
 Statements   : 6.54% ( 7/107 )
 Branches     : 0% ( 0/26 )
@@ -352,13 +352,13 @@ With this change you also need to change a couple of parameters in your `tsconfi
 
 In your `tsconfig.json` file change `rootDir` parameter to `.`:
 
-```
+```json
 "rootDir": ".",
 ```
 
 In your `package.json` file change `main` parameter to `./out/src/extension`.
 
-```
+```json
 "main": "./out/src/extension",
 ```
 
