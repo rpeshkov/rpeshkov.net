@@ -40,3 +40,8 @@ weight = 100
         identifier = "links"
         weight = 200
         url = "/links/"
+    [[menu.main]]
+        name = "RSS"
+        identifier = "rss"
+        weight = 300
+        url = "/index.xml"
