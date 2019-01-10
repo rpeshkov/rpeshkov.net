@@ -10,26 +10,26 @@ commit messages in TortoiseHg.
 I've found that my favorite image viewer [XnView](http://xnview.com) doesn't work properly with cyrillic paths when
 installed on english Windows:
 
-![XnView](xnview.png)
+![XnView](https://s3.eu-central-1.amazonaws.com/rpeshkov.net/cyrillic-symbols-on-english-windows/xnview.png)
 
 TortoiseHg Workbench have some issues too:
 
-![TortoiseHg Workbench](question-marks.png)
+![TortoiseHg Workbench](https://s3.eu-central-1.amazonaws.com/rpeshkov.net/cyrillic-symbols-on-english-windows/question-marks.png)
 
 That particular issues mean that XnView and TortoiseHg Workbench doesn't support Unicode. However, there's a fix for
 this by applying some settings in Windows. You need to tell Windows which language to use for non-Unicode applications.
 
 1) Navigate to Control Panel, either by Start Menu or by running `control` command.
 
-![Start Menu](start-menu.png)
+![Start Menu](https://s3.eu-central-1.amazonaws.com/rpeshkov.net/cyrillic-symbols-on-english-windows/start-menu.png)
 
 2) Open "Language" item in Control Panel and select "Change date, time, or number formats".
 
-![Language](control-panel-language.png)
+![Language](https://s3.eu-central-1.amazonaws.com/rpeshkov.net/cyrillic-symbols-on-english-windows/control-panel-language.png)
 
 3) Navigate to "Administrative" tab and push "Change system locale..." button.
 
-![Administrative tab](language-administrative.png)
+![Administrative tab](https://s3.eu-central-1.amazonaws.com/rpeshkov.net/cyrillic-symbols-on-english-windows/language-administrative.png)
 
 4) Select "Russian (Russia)" option from dropdown and save all the windows that you've opened.
 

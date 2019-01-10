@@ -368,8 +368,8 @@ Now relaunch your tests and you'll see that coverage report doesn't have coverag
 
 Strange that VSCode extension generator doesn't have this functionality out of the box, but as you can see, it's actually not so hard to implement it by yourself. If you had any troubles during implementation of the steps above, you may get final version from the GitHub repository https://github.com/rpeshkov/vscode-testcov and compare it with what you got or you can ask me in Twitter and I'll try to help you.
 
-[yeoman]: ./1-yeoman-code-generator.png
-[vscode-ext]: ./2-vscode-with-opened-extension.png
-[vscode-test-run]: ./3-vscode-run-tests.png
-[html-rep]: ./4-html-report.png
-[src-test-folders]: ./5-src-test-folders.png
+[yeoman]: https://s3.eu-central-1.amazonaws.com/rpeshkov.net/vscode-extension-coverage/1-yeoman-code-generator.png
+[vscode-ext]: https://s3.eu-central-1.amazonaws.com/rpeshkov.net/vscode-extension-coverage/2-vscode-with-opened-extension.png
+[vscode-test-run]: https://s3.eu-central-1.amazonaws.com/rpeshkov.net/vscode-extension-coverage/3-vscode-run-tests.png
+[html-rep]: https://s3.eu-central-1.amazonaws.com/rpeshkov.net/vscode-extension-coverage/4-html-report.png
+[src-test-folders]: https://s3.eu-central-1.amazonaws.com/rpeshkov.net/vscode-extension-coverage/5-src-test-folders.png

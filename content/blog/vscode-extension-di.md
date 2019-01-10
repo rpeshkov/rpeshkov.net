@@ -295,7 +295,7 @@ Hopefully, you now have a better understanding of how to integrate DI framework 
 
 [inversifyjs]: http://inversify.io/
 [reflect-metadata]: https://www.npmjs.com/package/reflect-metadata
-[vscode]: ./1-vscode.png
-[extension-debug]: ./2-extension-debug.png
-[debug-console]: ./3-debug-console-output.png
+[vscode]: https://s3.eu-central-1.amazonaws.com/rpeshkov.net/vscode-extension-di/1-vscode.png
+[extension-debug]: https://s3.eu-central-1.amazonaws.com/rpeshkov.net/vscode-extension-di/2-extension-debug.png
+[debug-console]: https://s3.eu-central-1.amazonaws.com/rpeshkov.net/vscode-extension-di/3-debug-console-output.png
 [inversify-docs]: https://github.com/inversify/InversifyJS/tree/master/wiki
