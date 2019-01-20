@@ -1,0 +1,14 @@
+{
+	"ref": {
+		"scope": "markdown",
+		"prefix": "ref",
+		"body": "{{< ref \"$0\" >}}"
+	},
+
+	"refl": {
+		"scope": "markdown",
+		"prefix": "refl",
+		"body": "[${1:Link}]({{< ref \"$0\" >}})"
+	}
+
+}
