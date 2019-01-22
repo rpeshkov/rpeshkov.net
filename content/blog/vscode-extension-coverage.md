@@ -1,7 +1,6 @@
 ---
 title: "VSCode extension code coverage"
 date: 2018-05-06T22:38:35+02:00
-draft: false
 tags: ["vscode"]
 ---
 

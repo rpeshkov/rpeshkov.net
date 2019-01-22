@@ -1,7 +1,6 @@
 ---
 title: "VSCode extension dependency injection"
 date: 2018-08-02T20:00:05+02:00
-draft: false
 tags: ["vscode"]
 ---
 
