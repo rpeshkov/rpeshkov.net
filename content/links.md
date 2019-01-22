@@ -1,11 +1,14 @@
 ---
 title: "Links"
-date: 2018-04-04T01:29:40+02:00
-draft: false
+date: 2019-01-22T22:07:52.505Z
 ---
 
 This page is a collection of links or blogs that I read and find interesting.
 
 ## Blogs
 
-- [Alex Edwards](http://www.alexedwards.net/): A lot of useful information about Go language
+- [Alex Edwards](http://www.alexedwards.net/): A lot of useful information about Go language.
+
+## Links
+
+- [Nikita Voloboev Wiki](https://wiki.nikitavoloboev.xyz): Great collection of useful things for automation of your system.
