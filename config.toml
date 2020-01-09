@@ -36,12 +36,17 @@ weight = 100
         identifier = "blog"
         url = "/blog/"
     [[menu.main]]
+        name = "Wiki"
+        identifier = "wiki"
+        weight = 200
+        url = "/wiki/"
+    [[menu.main]]
         name = "Links"
         identifier = "links"
-        weight = 200
+        weight = 300
         url = "/links/"
     [[menu.main]]
         name = "RSS"
         identifier = "rss"
-        weight = 300
+        weight = 400
         url = "/index.xml"
