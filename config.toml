@@ -3,8 +3,8 @@ languageCode = "en-us"
 title = "Roman Peshkov"
 theme = "rp"
 pluralizelisttitles = false
-# pygmentsUseClassic=true
-pygmentsStyle="monokai"
+pygmentsStyle="dracula"
+# pygmentsStyle="solarized-dark"
 pygmentsCodeFences = true
 
 [params]
