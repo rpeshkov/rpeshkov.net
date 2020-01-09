@@ -3,4 +3,9 @@
         "MD002": false,
         "MD041": false
     },
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/public": true
+    }
 }

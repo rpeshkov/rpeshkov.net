@@ -4,7 +4,6 @@ title = "Roman Peshkov"
 theme = "rp"
 pluralizelisttitles = false
 pygmentsStyle="dracula"
-# pygmentsStyle="solarized-dark"
 pygmentsCodeFences = true
 
 [params]
@@ -17,7 +16,6 @@ copyright = "Copyright &copy; 2019 Roman Peshkov"
 github = "rpeshkov"
 linkedin = "rpeshkov"
 twitter = "rpeshkov"
-vk = "rpeshkov"
 email = "peshkovroman@gmail.com"
 
 [related]
