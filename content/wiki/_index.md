@@ -7,6 +7,7 @@ date: 2019-01-22T21:45:15.894Z
 
 - [Angular]({{< ref "angular.md" >}})
 - [TypeScript]({{< ref "typescript.md" >}})
+- [React]({{< ref "react.md" >}})
 
 ## CI/CD
 
