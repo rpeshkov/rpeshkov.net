@@ -5,4 +5,8 @@ date: 2019-01-22T21:45:15.894Z
 
 ## Web Development
 
-[Angular]({{< ref "angular.md" >}})
+- [Angular]({{< ref "angular.md" >}})
+
+## CI/CD
+
+- [Jenkins]({{< ref "jenkins.md" >}})
