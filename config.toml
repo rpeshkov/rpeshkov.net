@@ -10,7 +10,7 @@ pygmentsCodeFences = true
 recentCount = 3
 avatar = "/avatar.jpg"
 description = "developer, geek, workaholic"
-copyright = "Copyright &copy; 2020 Roman Peshkov"
+copyright = "Copyright &copy; 2021 Roman Peshkov"
 
 [params.social]
 github = "rpeshkov"
