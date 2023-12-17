@@ -5,12 +5,8 @@ date: 2018-04-05T23:31:35+02:00
 
 Hello, my name is Roman.
 
-I'm .NET developer with over 5 years of experience. IT engineer since 2008.
+I'm a software engineer with over 10 years of experience.
 
-Previously have been working a lot on ISS and CCTV development. Currently developing business automation systems on Kofax Capture and OpenText platforms.
+Mainly focused on frontend development using modern frameworks like React. Has strong skills in backend development using C# and .NET, but this knowledge might be outdated.
 
-Participated in projects of creating shared services center for Norilsk Nikel and Megafon companies.
-
-Certified Kofax Capture and Kofax Transformation Modules specialist.
-
-Really enjoy web technologies and everything that is connected with web. In my spare time do websites and web portals using WordPress CMS.
+Very interested in software engineering in general and continuously studying new things in this area.

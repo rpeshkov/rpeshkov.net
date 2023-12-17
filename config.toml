@@ -8,9 +8,9 @@ pygmentsCodeFences = true
 
 [params]
 recentCount = 3
-avatar = "/avatar.jpg"
+avatar = "/avatar.webp"
 description = "developer, geek, workaholic"
-copyright = "Copyright &copy; 2021 Roman Peshkov"
+copyright = "Copyright &copy; 2023 Roman Peshkov"
 
 [params.social]
 github = "rpeshkov"
